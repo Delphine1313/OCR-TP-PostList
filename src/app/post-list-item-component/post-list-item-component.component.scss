@@ -1,0 +1,5 @@
+// classe pour affichage du corps du post avec ses line-break et justifié dans le contenaire p.
+.postContent {
+    white-space: pre-wrap;
+    word-break: break-word
+  }

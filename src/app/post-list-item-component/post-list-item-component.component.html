@@ -1,0 +1,14 @@
+<!-- utilisation directive ngClass pour determiner la couleur du post en fonction du champs loveIts du post -->
+<li [ngClass]="{'list-group-item':true,
+'list-group-item-success': post.loveIts > 0,
+'list-group-item-danger': post.loveIts < 0  }">
+<!-- utilisation du pipe pour formater la date du post et la casse du titre -->
+<div class='pull-right'>{{ post.created_at  | date:'dd/MM/yyyy,  H:mm' }}</div>
+<h4>{{ post.title | uppercase }}</h4>
+  <!-- classe postcontent definie pour les retour de ligne et justification du corps du post -->
+  <p  class="postContent">{{ post.content }}
+  </p>  
+<!-- boutons permettant d'augmenter et de diminuer le nombre de loveIts du post -->
+  <input type="button"  class="btn btn-success" value="Love it" (click)='loveIt(1)'>
+  <input type="button"  class="btn btn-danger" value="Don't love it" (click)='loveIt(-1)'>
+</li>
